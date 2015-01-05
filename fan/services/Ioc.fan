@@ -1,5 +1,5 @@
 
-@Js
+@Js @NoDoc
 const class Ioc {
 	private static const StaticData staticData := StaticData(Ioc#) 
 	

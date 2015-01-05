@@ -1,6 +1,6 @@
 using fwt
 
-@Js
+@Js @NoDoc
 class HiScoreEntryScreen : HiScoreScreen {
 	
 	private HiScorePosition hiScorePosition

@@ -1,5 +1,5 @@
 
-@Js
+@Js @NoDoc
 @Serializable
 class OptionPrefs {
 	

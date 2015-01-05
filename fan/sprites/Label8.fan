@@ -1,5 +1,5 @@
 
-@Js
+@Js @NoDoc
 class Label8 : Sprite2D {
 	
 	private Str text

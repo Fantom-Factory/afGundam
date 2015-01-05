@@ -6,6 +6,7 @@ using [java] javax.sound.sampled::DataLine$Info as Info
 using afMicromod
 using concurrent
 
+@NoDoc
 class JavaOnlyMusicPlayer : MusicPlayer {
 	private const File titleTuneMod := `fan://${typeof.pod}/res/music/DuranDuran.mod`.get  
 	
@@ -29,6 +30,7 @@ class JavaOnlyMusicPlayer : MusicPlayer {
 	}
 }
 
+@NoDoc
 class JavaOnlySound : Sound {
 
 	private Clip clip

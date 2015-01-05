@@ -1,5 +1,5 @@
 
-@Js
+@Js @NoDoc
 class PodSpike : SpriteCollision {
 
 	private Int frameIndex

@@ -1,5 +1,5 @@
 
-@Js
+@Js @NoDoc
 class SpikyPod : SpriteCollision {
 
 	private	Int initY

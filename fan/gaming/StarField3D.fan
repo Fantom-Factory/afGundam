@@ -1,6 +1,6 @@
 using gfx
 
-@Js
+@Js @NoDoc
 class StarField3D {
 	
 //	static const Int noOfStars := Runtime.isJs ? 30 : 300
@@ -28,7 +28,7 @@ class StarField3D {
 	}
 }
 
-@Js
+@Js @NoDoc
 internal class Star3D {
 	
 //	static	const Color[] COLOURS	:= [Color.makeArgb(20, 65, 79, 155), Color.makeArgb(20, 129, 139, 192), Color.makeArgb(20, 192, 202, 245)]

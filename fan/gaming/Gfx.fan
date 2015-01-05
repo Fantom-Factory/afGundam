@@ -1,6 +1,6 @@
 using gfx
 
-@Js
+@Js @NoDoc
 class Gfx {
 	
 			Graphics	g

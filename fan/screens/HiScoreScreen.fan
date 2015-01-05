@@ -1,5 +1,5 @@
 
-@Js
+@Js @NoDoc
 class HiScoreScreen : TitleScreen {
 	
 	protected HiScorePrefs	hiScores	:= HiScorePrefs.load

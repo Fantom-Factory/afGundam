@@ -1,7 +1,7 @@
 using gfx::Image
 using gfx::Size
 
-@Js
+@Js @NoDoc
 abstract class Sprite2D {
 	public static const Int SPEED_COEFF 	:= 20
 
@@ -39,7 +39,7 @@ abstract class Sprite2D {
 }
 
 
-@Js
+@Js @NoDoc
 enum class SpriteType {
 	all,
 	

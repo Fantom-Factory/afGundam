@@ -7,7 +7,7 @@ using fwt
 ** http://stackoverflow.com/questions/7371142/why-isnt-key-released-event-sent-when-two-keys-are-pressed
 ** https://bugs.eclipse.org/bugs/show_bug.cgi?id=50020
 ** 
-@Js
+@Js @NoDoc
 class PlayerInput {
 
 	private Int rapidFireWait	:= 0

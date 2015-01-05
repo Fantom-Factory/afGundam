@@ -1,5 +1,5 @@
 
-@Js
+@Js @NoDoc
 @Serializable{collection=true}
 class HiScorePrefs {
 	
@@ -57,7 +57,7 @@ class HiScorePrefs {
 	}
 }
 
-@Js
+@Js @NoDoc
 @Serializable{simple=true}
 class HiScorePosition {
 	

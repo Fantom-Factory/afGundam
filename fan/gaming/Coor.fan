@@ -1,6 +1,6 @@
 using gfx
 
-@Js
+@Js @NoDoc
 class Coor : Coordinate {
 	
 	private Size spriteSize 
@@ -115,7 +115,7 @@ class Coor : Coordinate {
 	}
 }
 
-@Js
+@Js @NoDoc
 enum class CoorClipStrategy {
 //	none,
 	insideScreen,

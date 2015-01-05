@@ -1,6 +1,6 @@
 using gfx
 
-@Js
+@Js @NoDoc
 class HUD {
 	
 	private GundamGame?	player1
@@ -115,7 +115,7 @@ class HUD {
 }
 
 
-@Js
+@Js @NoDoc
 internal class GundamSmall : Sprite2D {
 	new makeAt(Int x, Int y) : super.make(36, 33) {
 		image 	= Ioc.images.gundamSmall
@@ -132,7 +132,7 @@ internal class GundamSmall : Sprite2D {
 }
 
 
-@Js
+@Js @NoDoc
 internal class Baddy {
 	SpriteCollision	baddy
 	Int				iconIndex

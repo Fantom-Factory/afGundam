@@ -4,6 +4,9 @@ using web
 using webmod
 using wisp
 
+**
+** Gundam :: A horizontally scrolling shoot'em'up
+** 
 class Main : AbstractMain {
 	
 	@Opt { help = "Start Web Service"; aliases = ["ws"] }
@@ -31,7 +34,6 @@ class Main : AbstractMain {
 		
 		return 1
 	}
-	
 }
 
 

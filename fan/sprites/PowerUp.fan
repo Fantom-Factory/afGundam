@@ -1,5 +1,5 @@
 
-@Js
+@Js @NoDoc
 class PowerUp : SpriteCollision {
 	
 	private PowerUpType type
@@ -80,7 +80,7 @@ class PowerUp : SpriteCollision {
 	}
 }
 
-@Js
+@Js @NoDoc
 enum class PowerUpType {
 	speedUp		( 0..< 8, "Speed Up", 	 SpriteType.speedUp),
 	tripleFire	( 8..<16, "Triple Fire", SpriteType.tripleFire),

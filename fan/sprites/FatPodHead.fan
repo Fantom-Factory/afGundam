@@ -1,5 +1,5 @@
 
-@Js
+@Js @NoDoc
 class FatPodHead : SpriteCollision {
 
 	private FatPod fatPod

@@ -1,7 +1,7 @@
 using gfx::Color
 using gfx::Size
 
-@Js
+@Js @NoDoc
 class SpriteCollision : Sprite2D {
 	
 				Int 		nrg

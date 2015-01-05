@@ -1,6 +1,6 @@
 
 ** Sometimes static data is just too easy to ignore!
-@Js
+@Js @NoDoc
 const class StaticData {
 
 	private const Str mapKey
@@ -65,7 +65,7 @@ const class StaticData {
 }
 
 
-@Js
+@Js @NoDoc
 native internal class StaticMap {
 	
 	static Obj? get(Obj key)

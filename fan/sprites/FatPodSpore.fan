@@ -1,5 +1,5 @@
 
-@Js
+@Js @NoDoc
 class FatPodSpore : SpriteCollision {
 
 	new makeAt(Coordinate centreCoor, Coordinate speeds) : super.make(16, 16) {

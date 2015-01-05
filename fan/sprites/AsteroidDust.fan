@@ -1,5 +1,5 @@
 
-@Js
+@Js @NoDoc
 class AsteroidDust : Sprite2D {
 	
 	new makeAt(Coordinate centreCoor, Coordinate speeds) : super.make(4, 4) {

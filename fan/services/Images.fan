@@ -1,7 +1,7 @@
 using gfx
 using fwt
 
-@Js
+@Js @NoDoc
 // TODO: Create own ImageWrapper for preloading, defining type, etc
 class Images {
 	private static const Log log := Log.get("Images")
@@ -80,7 +80,7 @@ class Images {
 	}
 }
 
-@Js
+@Js @NoDoc
 enum class ImageType {
 	title,
 	game

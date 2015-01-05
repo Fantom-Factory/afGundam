@@ -3,6 +3,7 @@ using web
 using webmod
 using wisp
 
+@NoDoc
 const class WindowMod : WebMod {
 
 	private const Str windowTitle

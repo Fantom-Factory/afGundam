@@ -2,7 +2,7 @@
 **
 ** A runnable with error handling. The default impl simply logs the error and returns 'null'. 
 ** Useful for FWT callbacks which have a habit of silently failing.
-@Js
+@Js @NoDoc
 class Safe {
 	private static const Log log := Log.get("Safe")
 	

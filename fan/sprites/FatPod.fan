@@ -1,5 +1,5 @@
 
-@Js
+@Js @NoDoc
 class FatPod : SpriteCollision {
 
 	private Coordinate finalCoor
