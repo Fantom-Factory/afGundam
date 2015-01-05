@@ -1,0 +1,81 @@
+Overview [#overview]
+********************
+'Gundam' is a pure Fantom horizontally scrolling shoot'em'up that runs both from the desktop and in a browser!
+
+![Gundam Screenshot]`http://static.alienfactory.co.uk/fantom-docs/afGundam.screenshot.jpg`
+
+Visit the [Alien-Factory Gundam Page]`http://www.alienfactory.co.uk/gundam/` to find out more, or play [Gundam Online]`http://www.alienfactory.co.uk/gundam/playonline` now!
+
+
+
+Install [#Install]
+******************
+Install '@{project.name}' with the Fantom Repository Manager ( [fanr]`docFanr::Tool.install` ):
+
+  C:\> fanr install -r http://repo.status302.com/fanr/ @{pod.name}
+
+To use in a [Fantom]`http://fantom.org/` project, add a dependency to 'build.fan':
+
+  depends = ["sys 1.0", ..., "@{pod.name} @{pod.version}"]
+
+
+
+Documentation [#documentation]
+******************************
+Full API & fandocs are available on the [Status302 repository]`http://repo.status302.com/doc/@{pod.name}/`.
+
+
+
+Quick Start [#quickStart]
+*************************
+
+Run from Desktop [#desktop]
+===========================
+1). Run 'Gundam' from the command line:
+pre>
+syntax: fantom
+
+C:\> fan afGundam
+
+[info] [LoadingScreen]
+[info] [LoadingScreen] GUNDAM 2.0.4
+[info] [LoadingScreen] ============
+[info] [LoadingScreen]
+[info] [JavaVersion] Java Version OK : 1.6.0_45
+<pre
+
+
+Run in Browser [#browser]
+=========================
+1). Run 'Gundam' from the command line with the '-ws' option to start the Gundam web server:
+pre>
+syntax: fantom
+
+C:\> fan afGundam -ws
+
+[info] [web] WispService started on port 8080
+<pre
+
+Then point your browser at `http://localhost:8080/`.
+
+
+
+Release Notes [#releaseNotes]
+*****************************
+
+v2.0.4 [#v2.0.4]
+----------------
+ - Chg: No longer relies on the 'afUtils' pod.
+ - Bug: The 'Drone' alien never appeared.
+
+v2.0.2 [#v2.0.2]
+----------------
+ - Chg: Images are pre-loaded before the title / game screen.
+ - Chg: JavaScript version now reports the correct (hardcoded) version.
+ - Chg: Pulsar overload log warnings are now limited to 1 every 5 seconds
+
+ v2.0.0 [#v2.0.0]
+----------------
+ - New: Complety re-coded in Fantom
+ - New: Also runs in an Internet browser!
+
