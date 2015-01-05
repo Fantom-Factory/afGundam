@@ -4,13 +4,13 @@ class Build : BuildPod {
 	
 	new make() {
 		podName = "afGundam"
-		summary = "A horizontally scrolling shoot'em'up"
-		version = Version("2.0.3")
+		summary = "A pure Fantom horizontally scrolling shoot'em'up"
+		version = Version("2.0.4")
 
 		meta = [
 			"proj.name"			: "Gundam",
 			"tags"				: "misc",
-			"repo.private"		: "true"
+			"repo.private"		: "false"
 		]
 
 		depends = [

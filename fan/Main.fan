@@ -15,7 +15,7 @@ class Main : AbstractMain {
 	@Opt { help = "HTTP port of web service" }
 	Int port := 8080
 	
-	
+	@NoDoc
 	override Int run() {
 		usage
 		

@@ -1,6 +1,10 @@
 ## Overview 
 
-`Gundam` is a horizontally scrolling shoot'em'up that runs on a desktop and in a browser!
+`Gundam` is a pure Fantom horizontally scrolling shoot'em'up that runs both from the desktop and in a browser!
+
+![Gundam Screenshot](http://static.alienfactory.co.uk/fantom-docs/afGundam.screenshot.jpg)
+
+Visit the [Alien-Factory Gundam Page](http://www.alienfactory.co.uk/gundam/) to find out more, or play [Gundam Online](http://www.alienfactory.co.uk/gundam/playonline) now!
 
 ## Install 
 
@@ -26,7 +30,7 @@ Full API & fandocs are available on the [Status302 repository](http://repo.statu
 C:\> fan afGundam
 
 [info] [LoadingScreen]
-[info] [LoadingScreen] GUNDAM 2.0.3
+[info] [LoadingScreen] GUNDAM 2.0.4
 [info] [LoadingScreen] ============
 [info] [LoadingScreen]
 [info] [JavaVersion] Java Version OK : 1.6.0_45
@@ -34,7 +38,7 @@ C:\> fan afGundam
 
 ### Run in Browser 
 
-1). Run `Gundam` from the command line with the `-ws` option to start a web server:
+1). Run `Gundam` from the command line with the `-ws` option to start the Gundam web server:
 
 ```
 C:\> fan afGundam -ws
