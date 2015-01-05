@@ -4,7 +4,7 @@ using gfx::Rect
 using gfx::Size
 using afFantomMappy
 
-@Js
+@Js @NoDoc
 class JavaMappy : MapController {
 	private static const Int SCROLL_SPEED	:= 1
 	
@@ -138,7 +138,7 @@ class JavaMappy : MapController {
 
 }
 
-@Js
+@Js @NoDoc
 mixin MapController {
 	abstract Void startScrolling()
 	abstract Void stopScrolling()

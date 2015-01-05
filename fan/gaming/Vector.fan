@@ -1,7 +1,7 @@
 //using [java] java.lang::Math
 using gfx
 
-@Js
+@Js @NoDoc
 @Serializable { simple = true }
 const class Vector : Coordinate {
 

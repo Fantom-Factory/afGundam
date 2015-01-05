@@ -1,7 +1,7 @@
 using gfx
 using fwt
 
-@Js
+@Js @NoDoc
 class OptionsScreen : TitleScreen {
 
 	private OptionPrefs prefs := OptionPrefs.load

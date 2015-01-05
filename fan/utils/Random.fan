@@ -1,5 +1,5 @@
 
-@Js
+@Js @NoDoc
 public const class Random {
 	
 	public Int nextInt(Range minMax) {

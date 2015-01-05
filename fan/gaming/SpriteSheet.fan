@@ -1,5 +1,5 @@
 
-@Js
+@Js @NoDoc
 class SpriteSheet {
 
 	private Sprite2D	sprite

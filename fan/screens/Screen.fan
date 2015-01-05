@@ -1,7 +1,7 @@
 using gfx
 using fwt
 
-@Js
+@Js @NoDoc
 abstract class Screen : Canvas {
 	private const static Log 	log 		:= Log.get(Screen#.name)
 	

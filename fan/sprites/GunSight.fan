@@ -1,7 +1,7 @@
 using gfx::Graphics
 using gfx::Size
 
-@Js
+@Js @NoDoc
 class GunSight : Sprite2D {
 
 	private static const Int 	minThrust	:= -3 * SPEED_COEFF

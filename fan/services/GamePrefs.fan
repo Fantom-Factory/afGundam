@@ -1,5 +1,5 @@
 
-@Js
+@Js @NoDoc
 class GamePrefs {
 	
 	Bool godMode

@@ -1,5 +1,5 @@
 
-@Js
+@Js @NoDoc
 abstract class AbsAsteroid : SpriteCollision {
 
 	new makeAt(Int x, Int y, Int w, Int h) : super.make(w, h) {

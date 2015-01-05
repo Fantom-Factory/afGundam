@@ -2,7 +2,7 @@ using gfx::Rect
 using gfx::Size
 using afFantomMappy::LayerViewer
 
-@Js
+@Js @NoDoc
 class GundamGame : SpriteCollision, MapCollision {
 	private static const Log log := Log.get("GundamSprite")
 	

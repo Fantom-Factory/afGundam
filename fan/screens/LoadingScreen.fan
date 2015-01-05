@@ -4,7 +4,7 @@ using gfx::Graphics
 using gfx::Image
 using gfx::Size
 
-@Js
+@Js @NoDoc
 class LoadingScreen : Screen, ScreenTextWriter {
 	private static const Log log := Log.get("LoadingScreen")
 

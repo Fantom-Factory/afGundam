@@ -1,6 +1,6 @@
 using gfx
 
-@Js
+@Js @NoDoc
 const class Point2 : Coordinate {
 	
 	** Default instance is 0, 0.

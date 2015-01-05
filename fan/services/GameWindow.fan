@@ -1,7 +1,7 @@
 using gfx
 using fwt
 
-@Js
+@Js @NoDoc
 class GameWindow {
 	private static const Log log := Log.get("GameWindow")
 	

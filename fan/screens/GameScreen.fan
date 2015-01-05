@@ -1,7 +1,7 @@
 using gfx
 using fwt
 
-@Js
+@Js @NoDoc
 class GameScreen : Screen {
 	
 	private HiScorePrefs hiScores	:= HiScorePrefs.load

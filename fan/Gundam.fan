@@ -3,7 +3,7 @@ using gfx
 **
 ** Gundam :: A horizontally scrolling shoot'em'up
 ** 
-@Js
+@Js @NoDoc
 const class Gundam {
 	
 	static const Str 	windowTitle	:= "Alien-Factory :: Gundam"

@@ -1,5 +1,5 @@
 
-@Js
+@Js @NoDoc
 class AboutScreen : TitleScreen {
 	
 	override Void doStartUp() {

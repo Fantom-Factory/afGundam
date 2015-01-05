@@ -1,6 +1,6 @@
 using afFantomMappy::LayerViewer
 
-@Js
+@Js @NoDoc
 class Sprites {
 	
 	private Sprite2D[] sprites := [,]

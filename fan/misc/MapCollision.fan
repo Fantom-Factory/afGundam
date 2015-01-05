@@ -1,7 +1,7 @@
 using afFantomMappy::Layer
 using afFantomMappy::LayerViewer
 
-@Js
+@Js @NoDoc
 mixin MapCollision {
 	
 	abstract Bool hit()

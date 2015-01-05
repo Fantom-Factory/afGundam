@@ -1,5 +1,5 @@
 
-@Js
+@Js @NoDoc
 class Speed : Coordinate {
 
 	Int minSpeed	:= -10 * Sprite2D.SPEED_COEFF

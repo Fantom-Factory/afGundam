@@ -1,6 +1,6 @@
 
 ** Calls listeners every XXXms. Use for animation and game loops.
-@Js
+@Js @NoDoc
 class Pulsar {
 	private const static Log	log 			:= Log.get(Pulsar#.name)
 	private const PulsarLoop	pulsarLoop		:= PulsarLoop()
@@ -114,14 +114,14 @@ class Pulsar {
 	}
 }
 
-@Js
+@Js @NoDoc
 enum class PulsarState {
 	stopped,
 	running,
 	stopping
 }
 
-@Js
+@Js @NoDoc
 internal native const class PulsarLoop {
 	Void pulseIn(Duration ms, |->| func)
 }

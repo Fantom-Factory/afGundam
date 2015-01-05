@@ -1,5 +1,5 @@
 
-@Js
+@Js @NoDoc
 class Music {	
 	private MusicPlayer? m_musicPlayer
 	
@@ -19,7 +19,7 @@ class Music {
 	}
 }
 
-@Js
+@Js @NoDoc
 mixin MusicPlayer {
 	abstract Void playTitleTune()
 	abstract Void stop()

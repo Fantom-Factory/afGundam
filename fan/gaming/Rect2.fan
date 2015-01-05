@@ -1,6 +1,6 @@
 using gfx::Rect
 
-@Js
+@Js @NoDoc
 const class Rect2 : Coordinate {
 
 	** Default instance is 0, 0, 0, 0.

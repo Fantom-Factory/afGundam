@@ -1,5 +1,5 @@
 
-@Js
+@Js @NoDoc
 class Drone : SpriteCollision {
 
 	private	Bool spin

@@ -1,7 +1,7 @@
 using gfx::Rect
 using afFantomMappy::LayerViewer
 
-@Js
+@Js @NoDoc
 class LeadSlug : SpriteCollision, MapCollision {
 	
 	new makeAt(Coordinate coors, Coordinate speeds) : super.make(9, 6) {

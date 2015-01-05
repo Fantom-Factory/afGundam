@@ -35,9 +35,4 @@ class Build : BuildPod {
 		javaDirs= [`java/`]
 		jsDirs 	= [`js/`]
 	}
-	
-	override Void compile() {
-		super.docApi = false		
-		super.compile
-	}
 }

@@ -1,5 +1,5 @@
 
-@Js
+@Js @NoDoc
 class Explosion64 : Sprite2D {
 
 	new make(Int x, Int y) : super.make(64, 64) {

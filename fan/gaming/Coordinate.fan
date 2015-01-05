@@ -1,5 +1,5 @@
 
-@Js
+@Js @NoDoc
 mixin Coordinate {
 
 	abstract Int x()

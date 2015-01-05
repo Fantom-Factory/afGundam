@@ -1,5 +1,5 @@
 
-@Js
+@Js @NoDoc
 class Asteroid96 : AbsAsteroid {
 		
 	new makeAt(Int x, Int y) : super.makeAt(x, y, 96, 96) {

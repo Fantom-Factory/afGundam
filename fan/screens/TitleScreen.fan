@@ -1,7 +1,7 @@
 using gfx 
 using fwt
 
-@Js
+@Js @NoDoc
 abstract class TitleScreen : Screen {
 	
 	protected MenuOptions 	menuOptions := MenuOptions()

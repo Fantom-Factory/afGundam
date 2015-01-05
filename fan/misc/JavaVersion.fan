@@ -1,5 +1,5 @@
 
-@Js
+@Js @NoDoc
 class JavaVersion {
 	private static const Log log := Log.get("JavaVersion")
 	

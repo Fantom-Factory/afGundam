@@ -1,7 +1,7 @@
 using gfx
 using fwt
 
-@Js
+@Js @NoDoc
 class MenuOptions {
 
 	Int? selectedIndex
@@ -56,7 +56,7 @@ class MenuOptions {
 
 
 
-@Js
+@Js @NoDoc
 class MenuOption {
 
 	Str text

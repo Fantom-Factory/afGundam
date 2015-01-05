@@ -8,7 +8,7 @@
 **     FAN_ENV_PATH=C:/Projects-Fantom/ArtificialLife
 ** 
 ** See http://fantom.org/doc/docLang/Env.html#boot
-@Js
+@Js @NoDoc
 const class Preferences {
 	private static const Log log := Log.get(Preferences#.name)
 	
@@ -81,8 +81,7 @@ const class Preferences {
 	
 }
 
-@Js
-@NoDoc
+@Js @NoDoc
 internal class CachedPrefs {
   	private File? 		file
   	private DateTime? 	modied

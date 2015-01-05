@@ -1,5 +1,5 @@
 
-@Js
+@Js @NoDoc
 class GundamBig : Sprite2D {
 	
 	private Int angle

@@ -1,7 +1,7 @@
 using gfx::Image
 using gfx::Size
 
-@Js
+@Js @NoDoc
 class PreLoadImagesScreen : Screen, ScreenTextWriter {
 	private ImageType 	imagesToPreload 
 	private Screen 		nextScreen

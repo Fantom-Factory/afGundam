@@ -1,5 +1,5 @@
 
-@Js
+@Js @NoDoc
 class Sounds {
 	private static const Log log := Log.get("Sounds")
 
@@ -25,13 +25,13 @@ class Sounds {
 	}
 }
 
-@Js
+@Js @NoDoc
 mixin Sound {
 	abstract Void play()
 	abstract Void stop()
 }
 
-@Js
+@Js @NoDoc
 class SoundJs : Sound {
 	override Void play() {}
 	override Void stop() {}

@@ -3,7 +3,7 @@ using gfx::Font
 using gfx::Graphics
 using gfx::Size
 
-@Js
+@Js @NoDoc
 mixin ScreenTextWriter {
 	
 	Void titleText(Gfx g) {

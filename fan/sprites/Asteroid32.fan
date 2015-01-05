@@ -1,5 +1,5 @@
 
-@Js
+@Js @NoDoc
 class Asteroid32 : AbsAsteroid {
 
 	new makeExploding(Coordinate centreCoor, Coordinate speeds) : this.makeAt(centreCoor.x, centreCoor.y) {

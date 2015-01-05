@@ -1,5 +1,5 @@
 
-@Js
+@Js @NoDoc
 const class Sin {
 	
 	private const static Sin instance := Sin()

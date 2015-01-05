@@ -1,5 +1,5 @@
 
-@Js
+@Js @NoDoc
 const class Runtime {
 	
 	// FIXME: see Fantom Topic XXXX

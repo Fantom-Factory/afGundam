@@ -1,5 +1,5 @@
 
-@Js
+@Js @NoDoc
 class Explosion20 : Sprite2D {
 
 	new makeAt(Coordinate centreCoor, Coordinate speeds) : super.make(20, 20) {
