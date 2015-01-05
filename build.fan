@@ -21,7 +21,6 @@ class Build : BuildPod {
 			"util         1.0.63 - 1.0",
 
 			// ---- Game Libs ----
-			"afUtils 1.0",
 			"afFantomMappy 1.0.4 - 1.0",
 			"afMicromod    1.0.4 - 1.0",
 
@@ -33,5 +32,12 @@ class Build : BuildPod {
 
 		srcDirs = [`fan/`, `fan/web/`, `fan/utils/`, `fan/sprites/`, `fan/services/`, `fan/screens/`, `fan/prefs/`, `fan/misc/`, `fan/gaming/`]
 		resDirs = [`res/icons/`, `res/images/`, `res/levels/`, `res/music/`, `res/sounds/`]
-	}	
+		javaDirs= [`java/`]
+		jsDirs 	= [`js/`]
+	}
+	
+	override Void compile() {
+		super.docApi = false		
+		super.compile
+	}
 }

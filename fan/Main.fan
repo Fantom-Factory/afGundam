@@ -24,7 +24,7 @@ class Main : AbstractMain {
 		if (webService) {
 			wisp := WispService {
 				it.port = this.port
-				it.root = WindowMod(Gundam.windowTitle, Gundam.windowSize, "sys, concurrent, gfx, fwt, afUtils, afFantomMappy, afGundam", Gundam#)
+				it.root = WindowMod(Gundam.windowTitle, Gundam.windowSize, "sys, concurrent, gfx, fwt, afFantomMappy, afGundam", Gundam#)
 			}
 			return runServices([wisp])			
 		}

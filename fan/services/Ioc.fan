@@ -1,5 +1,3 @@
-using afUtils::Pulsar
-using afUtils::StaticData
 
 @Js
 const class Ioc {
