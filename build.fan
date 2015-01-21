@@ -9,7 +9,7 @@ class Build : BuildPod {
 
 		meta = [
 			"proj.name"			: "Gundam",
-			"tags"				: "misc",
+			"tags"				: "app",
 			"repo.private"		: "true"
 		]
 
