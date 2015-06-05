@@ -1,0 +1,18 @@
+Versions
+********
+
+v2.0.4
+------
+ - Chg: No longer relies on the 'afUtils' pod.
+ - Bug: The 'Drone' alien never appeared.
+
+v2.0.2
+------
+ - Chg: Images are pre-loaded before the title / game screen.
+ - Chg: JavaScript version now reports the correct (hardcoded) version.
+ - Chg: Pulsar overload log warnings are now limited to 1 every 5 seconds
+
+ v2.0.0
+-------
+ - New: Complety re-coded in Fantom
+ - New: Also runs in an Internet browser!

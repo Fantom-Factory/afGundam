@@ -5,12 +5,12 @@ class Build : BuildPod {
 	new make() {
 		podName = "afGundam"
 		summary = "A pure Fantom horizontally scrolling shoot'em'up"
-		version = Version("2.0.5")
+		version = Version("2.0.4")
 
 		meta = [
 			"proj.name"			: "Gundam",
-			"tags"				: "app",
-			"repo.private"		: "true"
+			"repo.tags"			: "app",
+			"repo.public"		: "true"
 		]
 
 		depends = [
@@ -31,8 +31,10 @@ class Build : BuildPod {
 		]
 
 		srcDirs = [`fan/`, `fan/web/`, `fan/utils/`, `fan/sprites/`, `fan/services/`, `fan/screens/`, `fan/prefs/`, `fan/misc/`, `fan/gaming/`]
-		resDirs = [`res/icons/`, `res/images/`, `res/levels/`, `res/music/`, `res/sounds/`]
+		resDirs = [`doc/`, `res/icons/`, `res/images/`, `res/levels/`, `res/music/`, `res/sounds/`]
 		javaDirs= [`java/`]
 		jsDirs 	= [`js/`]
+		
+		meta["afBuild.docApi"] = "false"
 	}
 }

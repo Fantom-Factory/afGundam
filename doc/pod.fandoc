@@ -1,0 +1,40 @@
+Overview [#overview]
+********************
+'Gundam' is a pure Fantom horizontally scrolling shoot'em'up that runs both from the desktop and in a browser!
+
+![Gundam Screenshot]`screenshot.jpg`
+
+Visit the [Alien-Factory Gundam Page]`http://www.alienfactory.co.uk/gundam/` to find out more, or play [Gundam Online]`http://www.alienfactory.co.uk/gundam/playonline` now!
+
+
+
+Quick Start
+***********
+
+Run from Desktop
+================
+Run 'Gundam' from the command line:
+
+    syntax: fantom
+
+    C:\> fan afGundam
+
+    [info] [LoadingScreen]
+    [info] [LoadingScreen] GUNDAM 2.0.4
+    [info] [LoadingScreen] ============
+    [info] [LoadingScreen]
+    [info] [JavaVersion] Java Version OK : 1.6.0_45
+
+Run in Browser
+==============
+Run 'Gundam' from the command line with the '-ws' option to start the Gundam web server:
+
+    syntax: fantom
+
+    C:\> fan afGundam -ws
+
+    [info] [web] WispService started on port 8080
+
+    Then point your browser at `http://localhost:8080/`.
+
+
