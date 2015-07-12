@@ -1,5 +1,9 @@
 Versions
 ********
+v2.0.6
+------
+ - New: Created standalone application '.zip' file.
+ - Bug: Now it *really* no longer relies on the 'afUtils' pod!
 
 v2.0.4
 ------

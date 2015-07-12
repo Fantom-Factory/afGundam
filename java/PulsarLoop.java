@@ -31,7 +31,7 @@ public class PulsarLoop extends Actor {
 
 	public Type typeof() {
 		if (type == null)
-			type = Type.find("afUtils::PulsarLoop");
+			type = Type.find("afGundam::PulsarLoop");
 		return type;
 	}
 	

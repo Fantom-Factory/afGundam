@@ -1,33 +1,50 @@
 Overview [#overview]
 ********************
-Gundam is a pure Fantom horizontally scrolling shoot'em'up that runs both from the desktop and in a browser!
+Gundam is a pure Fantom horizontally scrolling shoot'em'up that runs on both the desktop and from a browser!
 
 ![Gundam Screenshot]`screenshot.jpg`
 
-Visit the [Alien-Factory Gundam Page]`http://www.alienfactory.co.uk/gundam/` to find out more, or play [Gundam Online]`http://www.alienfactory.co.uk/gundam/playonline` now!
+Can't be bothered to download or install Gundam on your computer? Don't worry, play [Gundam Online]`http://www.alienfactory.co.uk/gundam/playonline` now!
+
+See [Gundam]`http://www.alienfactory.co.uk/gundam/` on Alien-Factory for details.
 
 
 
-Quick Start
-***********
+Gundam: Standalone
+*******************
+Gundam has been packaged into a standalone '.zip' file which does not require Fantom to be installed on a machine. (Though 'java' must be available from the command line.)
 
-Run from Desktop
-================
-Run 'Gundam' from the command line:
+To play, simply download from [Gundam Downloads Page]`https://bitbucket.org/AlienFactory/afgundam/downloads`, unzip, and run the bundled script.
 
-    syntax: fantom
 
-    C:\> fan afGundam
 
-    [info] [LoadingScreen]
-    [info] [LoadingScreen] GUNDAM 2.0.4
-    [info] [LoadingScreen] ============
-    [info] [LoadingScreen]
-    [info] [JavaVersion] Java Version OK : 1.6.0_45
+Gundam: Pod Library
+********************
+Gundam may also be installed into your existing Fantom environment by running the following:
+
+  C:\> fanr install -r http://pods.fantomfactory.org/fanr/ afGundam
+
+
+
+Desktop Version
+===============
+Launch a desktop version of 'Gundam' from the command line:
+
+  syntax: fantom
+
+  C:\> fan afGundam
+
+  [info] [LoadingScreen]
+  [info] [LoadingScreen] GUNDAM 2.0.6
+  [info] [LoadingScreen] ============
+  [info] [LoadingScreen]
+  [info] [JavaVersion] Java Version OK : 1.6.0_45
+
+
 
 Run in Browser
 ==============
-Run 'Gundam' from the command line with the '-ws' option to start the Gundam web server:
+Start a webserver that serves up Gundam by using the '-ws' option:
 
     syntax: fantom
 
@@ -35,6 +52,6 @@ Run 'Gundam' from the command line with the '-ws' option to start the Gundam web
 
     [info] [web] WispService started on port 8080
 
-    Then point your browser at `http://localhost:8080/`.
+Then point your browser at `http://localhost:8080/`.
 
 
