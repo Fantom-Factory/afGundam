@@ -26,7 +26,7 @@ public class StaticMap extends FanObj {
 
 	public Type typeof() {
 		if (type == null)
-			type = Type.find("afUtils::StaticMap");
+			type = Type.find("afGundam::StaticMap");
 		return type;
 	}
 	
