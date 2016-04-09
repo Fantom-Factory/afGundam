@@ -30,7 +30,7 @@ class Build : BuildPod {
 			"wisp   1.0"
 		]
 
-		srcDirs = [`fan/`, `fan/web/`, `fan/utils/`, `fan/sprites/`, `fan/services/`, `fan/screens/`, `fan/prefs/`, `fan/misc/`, `fan/gaming/`]
+		srcDirs = [`fan/`, `fan/gaming/`, `fan/misc/`, `fan/prefs/`, `fan/screens/`, `fan/services/`, `fan/sprites/`, `fan/utils/`, `fan/web/`]
 		resDirs = [`doc/`, `res/icons/`, `res/images/`, `res/levels/`, `res/music/`, `res/sounds/`]
 		javaDirs= [`java/`]
 		jsDirs 	= [`js/`]
