@@ -41,7 +41,6 @@ class GameWindow {
 	Void repaint() {		
 		// required, else we have to click in the screen each time it changes!
 		window.children.each |w| { w.repaint; w.focus }
-//		window.focus
 	}
 
 	Void open(Screen startScreen) {
@@ -54,15 +53,7 @@ class GameWindow {
 			}
 		}
 		
-		if (Runtime.isJs)
-			window.onMouseDown.add(startFunc)
-		else
-			window.onFocus.add(startFunc) 
-
-		// TODO: don't work in JS! See http://fantom.org/sidewalk/topic/1981
-//		window.onActive.add(startFunc) 
-//		window.onOpen.add(startFunc) 
-		
+		window.onOpen.add(startFunc) 
 		window.content = startScreen
 		window.open
 	}

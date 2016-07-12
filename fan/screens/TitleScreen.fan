@@ -57,7 +57,7 @@ abstract class TitleScreen : Screen {
 		}
 		
 		// wish I knew what copyright was!
-		g.drawFont8Centred("(c)2001-2015 Alien-Factory", size.h - 10)	
+		g.drawFont8Centred("(c)2001-2016 Alien-Factory", size.h - 10)	
 		
 		g.drawImage(Ioc.images.gundamTech, 10, size.h - 169 - 10)		
 	}	

@@ -6,7 +6,7 @@ using gfx
 @Js @NoDoc
 const class Gundam {
 	
-	static const Str 	windowTitle	:= "Alien-Factory :: Gundam"
+	static const Str 	windowTitle	:= "Gundam :: by :: Alien-Factory"
 	static const Size 	windowSize 	:= Size(640, 480)
 	
 	Void main() {
