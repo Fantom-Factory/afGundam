@@ -1,7 +1,7 @@
-#Gundam v2.0.6
+#Gundam v2.1.0
 ---
 [![Written in: Fantom](http://img.shields.io/badge/written%20in-Fantom-lightgray.svg)](http://fantom.org/)
-[![pod: v2.0.6](http://img.shields.io/badge/pod-v2.0.6-yellow.svg)](http://www.fantomfactory.org/pods/afGundam)
+[![pod: v2.1.0](http://img.shields.io/badge/pod-v2.1.0-yellow.svg)](http://www.fantomfactory.org/pods/afGundam)
 ![Licence: MIT](http://img.shields.io/badge/licence-MIT-blue.svg)
 
 ## Overview
@@ -10,9 +10,11 @@ Gundam is a pure Fantom horizontally scrolling shoot'em'up that runs on both the
 
 ![Gundam Screenshot](http://pods.fantomfactory.org/pods/afGundam/doc/screenshot.jpg)
 
-Can't be bothered to download or install Gundam on your computer? Don't worry, play [Gundam Online](http://www.alienfactory.co.uk/gundam/playonline) now!
+[Play Gundam Online](http://gundam.fantomfactory.org/) in your browser!
 
-See [Gundam](http://www.alienfactory.co.uk/gundam/) on Alien-Factory for details.
+Or [download Gundam](https://bitbucket.org/AlienFactory/afgundam/downloads) as packaged Fantom application.
+
+See [Gundam](http://www.alienfactory.co.uk/gundam/) on Alien-Factory for history and details.
 
 ## Install
 
@@ -22,7 +24,7 @@ Install `Gundam` with the Fantom Repository Manager ( [fanr](http://fantom.org/d
 
 To use in a [Fantom](http://fantom.org/) project, add a dependency to `build.fan`:
 
-    depends = ["sys 1.0", ..., "afGundam 2.0"]
+    depends = ["sys 1.0", ..., "afGundam 2.1"]
 
 ## Documentation
 
@@ -47,7 +49,7 @@ Launch a desktop version of `Gundam` from the command line:
     C:\> fan afGundam
     
     [info] [LoadingScreen]
-    [info] [LoadingScreen] GUNDAM 2.0.6
+    [info] [LoadingScreen] GUNDAM 2.1.0
     [info] [LoadingScreen] ============
     [info] [LoadingScreen]
     [info] [JavaVersion] Java Version OK : 1.6.0_45
