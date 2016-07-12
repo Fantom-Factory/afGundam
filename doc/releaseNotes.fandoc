@@ -3,8 +3,10 @@ Versions
 v2.1.0
 ------
  - Chg: Bigger, Bolder, Better (!) standalone webpage. Reminiscent of an arcade cabinet.
- - Chg: Removed native Java ans JS code, added a dependency on [afConcurrent]`pod:afConcurrent`.
+ - Chg: Removed native Java and JS code, added a dependency on [afConcurrent]`pod:afConcurrent`.
+ - Chg: Recompiled in Fantom 1.0.68 to make use of source maps and new optimisation techniques.
  - Chg: Added a Keys screen.
+ - Chg: Better 'ogimage'.
 
 v2.0.6
 ------
