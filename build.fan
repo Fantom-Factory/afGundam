@@ -5,12 +5,12 @@ class Build : BuildPod {
 	new make() {
 		podName = "afGundam"
 		summary = "A pure Fantom horizontally scrolling shoot'em'up"
-		version = Version("2.1.0")
+		version = Version("2.1.1")
 
 		meta = [
 			"proj.name"			: "Gundam",
 			"repo.tags"			: "app",
-			"repo.public"		: "true"
+			"repo.public"		: "false"
 		]
 
 		depends = [
@@ -36,5 +36,10 @@ class Build : BuildPod {
 		resDirs = [`doc/`, `res/icons/`, `res/images/`, `res/levels/`, `res/music/`, `res/sounds/`, `res/web/`]
 		
 		meta["afBuild.docApi"] = "false"
+	}
+	
+	@Target { help = "Null target for heroku" }
+	Void herokuCompile() {
+		echo("> herokuCompile() --> null")
 	}
 }
