@@ -25,7 +25,7 @@ class LoadingScreen : Screen, ScreenTextWriter {
 	override Void doDrawScreen(Gfx g) {
 		titleText(g)
 		
-		drawFont8Centred (g, "please click to begin", 	(16 * 12))
+		drawFont8Centred (g, "loading...", 	(16 * 12))
 	}
 	
 	private Void logVersion() {

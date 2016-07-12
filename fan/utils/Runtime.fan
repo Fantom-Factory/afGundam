@@ -2,11 +2,8 @@
 @Js @NoDoc
 const class Runtime {
 	
-	// FIXME: see Fantom Topic XXXX
-	static const Str defVer	:= "2.1.0 (JS)"
-	
 	static Str version() {
-		return isJs ? defVer : Runtime#.pod.version.toStr
+		Runtime#.pod.version.toStr
 	}
 
 	static Bool isJs() {
