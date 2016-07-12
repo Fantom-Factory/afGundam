@@ -91,7 +91,7 @@ const class GundamMod : WebMod {
 
 	Void onFile(Str url) {
     	// serve up pod resources
-    	File file := (`fan://afGundam/res/${url}`).get
+    	File file := (`fan://afGundam/res/web/${url}`).get
     	if (!file.exists) { res.sendErr(404); return }
     	FileWeblet(file).onService
    	}

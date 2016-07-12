@@ -10,7 +10,7 @@ class Build : BuildPod {
 		meta = [
 			"proj.name"			: "Gundam",
 			"repo.tags"			: "app",
-			"repo.public"		: "false"
+			"repo.public"		: "true"
 		]
 
 		depends = [
