@@ -5,7 +5,7 @@ class Build : BuildPod {
 	new make() {
 		podName = "afGundam"
 		summary = "A pure Fantom horizontally scrolling shoot'em'up"
-		version = Version("2.0.7")
+		version = Version("2.1.0")
 
 		meta = [
 			"proj.name"			: "Gundam",

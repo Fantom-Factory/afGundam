@@ -6,8 +6,9 @@ using wisp
 @NoDoc
 const class GundamMod : WebMod {
 
-	private const Str windowTitle	:= Gundam.windowTitle
-	private const Size windowSize	:= Gundam.windowSize
+	private const Str	windowTitle	:= Gundam.windowTitle
+	private const Size	windowSize	:= Gundam.windowSize
+	private const Str	windowDesc	:= "Gundam :: A horizontally scrolling shoot'em'up game written in Fantom, created by Alien-Factory"
 	private const Pod[] pods
 	
 	new make() {
@@ -32,12 +33,17 @@ const class GundamMod : WebMod {
 		res.headers["Content-Type"] = "text/html; charset=utf-8"
 		out := res.out
 		out.docType5
-		out.tag("html", "lang='en'").nl
+		out.tag("html", "lang='en' prefix='og: http://ogp.me/ns#'").nl
 		out.head
 			out.title.w(windowTitle).titleEnd
 			out.tag("meta", "charset='utf-8'").nl
 			out.tag("meta", "http-equiv='X-UA-Compatible' content='IE=edge'").nl
-			out.tag("meta", "name='description' content='Gundam :: A Horizontally Scrolling Shoot'em'Up Game by Alien-Factory'").nl
+			out.tag("meta", "name='description'        content=\"${windowDesc}\"").nl
+			out.tag("meta", "property='og:type'        content='website'").nl
+			out.tag("meta", "property='og:title'       content='${windowTitle}'").nl
+			out.tag("meta", "property='og:url'         content='${req.absUri}'").nl
+			out.tag("meta", "property='og:image'       content='/pod/afGundam/doc/ogimage.png'").nl
+			out.tag("meta", "property='og:description' content=\"${windowDesc}\"").nl
 			out.tag("link", "href='/pod/afGundam/res/web/gundam.css' type='text/css' rel='stylesheet'").nl
 		
 			pods.each |pod| { 
@@ -85,7 +91,7 @@ const class GundamMod : WebMod {
 
 	Void onFile(Str url) {
     	// serve up pod resources
-    	File file := (`fan://pod/afGundam/res/${url}`).get
+    	File file := (`fan://afGundam/res/${url}`).get
     	if (!file.exists) { res.sendErr(404); return }
     	FileWeblet(file).onService
    	}

@@ -2,21 +2,32 @@
 class BuildGundam {
 	static Void main() {
 		AppBuilder("afGundam") {
-			it.useEnv = false
+//			//it.useEnv = false
 			it.jarFiles = ["swt.jar"]
 		}.build |bob| {
-			bob.copyFile(`fan://afGundam/licence.txt`.get, `./`)
-			bob.createScriptFiles("${bob.podName}-web", "${bob.podName} -ws")
+			//bob.copyFile(`fan://afGundam/licence.txt`.get, `./`)
+			//bob.createScriptFiles("${bob.podName}-web", "${bob.podName} -ws")
+			
+			bob.createScriptFiles("${bob.podName}-web", "${bob.podName} -ws -port ")
+
+			bob.copyFile(`build.fan`.toFile,			`build.fan`,			true)
+			bob.copyFile(`heroku.props`.toFile,			`heroku.props`,			true)
+			bob.copyFile(`Procfile`.toFile,				`Procfile`,				true)
 		}
 	}
 }
 
-// need standard Fantom pod meta as to what native java ext / .dll to include
-// e.g. fwt could declare swt.jar
 
-** Creates an app installation with the minumum number of files 
-** 
-** v0.0.2
+
+// ---- Do not edit below this line ---------------------------------------------------------------
+
+** Fantom App Builder v0.0.4
+** =========================
+** Creates a standalone Fantom application installation with the minimum number of files.
+**
+** v0.0.4 - Added 'findPodFile()' to make work with Fantom Pod Manager.
+** v0.0.2 - Initial release.
+**
 const class AppBuilder {
 
 	** The name of the main application pod. 
@@ -29,14 +40,14 @@ const class AppBuilder {
 	** If 'true' (the default), then files (pods and libraries) are located using the current 'Env'.
 	** If 'false', files are taken to be relative to the 'fantomHomeDir'.  
 	** 
-	** See 'file()' method.
+	** See 'findFile()' method.
 	const Bool useEnv := true
 
 	** The Home directory of the Fantom installation. 
 	** If 'useEnv' is 'false' then all pods and libraries are taken from this location.
 	** Defaults to `sys::Env.homeDir`.
 	** 
-	**   homeDir = File.os(`C:\\Apps\\fantom-1.0.69\\`)
+	**   fantomHomeDir = File.os("C:\\Apps\\fantom-1.0.68\\")
 	const File fantomHomeDir := Env.cur.homeDir
 
 	** Names of pods that should not be included in the distribution.
@@ -78,7 +89,7 @@ const class AppBuilder {
 			throw ArgErr("fantomHomeDir is NOT a directory - ${fantomHomeDir.normalize.osPath}")
 
 		this.buildDir = this.buildDir.normalize
-		this._distDir = this.buildDir + `${podName}-${Pod.find(podName).version}/`
+		this._distDir = this.buildDir + `${podName}/`
 		
 		if (scriptArgs == null)
 			scriptArgs = podName
@@ -88,7 +99,8 @@ const class AppBuilder {
 	** 'extra' is called before the .zip file is created to allow you to perform any extra tasks; 
 	** such as copying over surplus files.
 	Void build(|AppBuilder|? extra := null) {
-		name := Pod.find(podName).meta["proj.name"] ?: podName
+		pod  := Pod.find(podName)
+		name := (pod.meta["proj.name"] ?: podName) + " ${pod.version}"
 		log
 		log("Packaging ${name}")
 		log("".padl(name.size+10, '='))
@@ -102,7 +114,7 @@ const class AppBuilder {
 
 		// copy java runtime
 		log("\nCopying Java runtime...")
-		copyFile(file(`lib/java/sys.jar`), `lib/java/`)
+		copyFile(findFile(`lib/java/sys.jar`), `lib/java/`)
 		
 		// copy pods
 		log("\nCopying application pods...")
@@ -135,13 +147,13 @@ const class AppBuilder {
 	** The parameters have the same meaning as `jarFiles` and `platforms`.
 	Void copyJarFiles(Str[] jarFiles, Str[] platformGlobs) {
 		jarFiles.each |jarFileName| {
-			copyFile(file(`lib/java/ext/${jarFileName}`, false), `lib/java/ext/`)
+			copyFile(findFile(`lib/java/ext/${jarFileName}`, false), `lib/java/ext/`)
 			
-			extDir := file(`lib/java/ext/`, false)
+			extDir := findFile(`lib/java/ext/`, false)
 			if (extDir != null) {
 				platformGlobs.each |platform| {
 					extDir.listDirs(Regex.glob(platform)).each |libDir| {
-						copyFile(file(`lib/java/ext/${libDir.name}/${jarFileName}`, false), `lib/java/ext/${libDir.name}/`)
+						copyFile(findFile(`lib/java/ext/${libDir.name}/${jarFileName}`, false), `lib/java/ext/${libDir.name}/`)
 					}
 				}
 			}
@@ -153,12 +165,14 @@ const class AppBuilder {
 		podNames := copyDependencies ? _findPodDependencies(Str[,], podName).unique : [podName]
 		
 		podNames.unique.each |pod| {
-			copyFile(file(`lib/fan/${pod}.pod`, false), `lib/fan/`)
+			// log versions of non-core pods
+			ver := Pod.find(pod).version == Pod.find("sys").version ? "" : " (v${Pod.find(pod).version})"
+			_copyFile(findPodFile(pod, true), `lib/fan/${pod}.pod`, false, ver)
 		}
 
 		if (copyEtcFiles)
 			podNames.unique.each |pod| {
-				copyFile(file(`etc/${pod}/`, false), `etc/${pod}/`)
+				copyFile(findFile(`etc/${pod}/`, false), `etc/${pod}/`)
 			}
 	}
 	
@@ -171,21 +185,7 @@ const class AppBuilder {
 	** 
 	** If 'destUrl' is a dir, then the file is copied into it.
 	File? copyFile(File? srcFile, Uri destUri, Bool overwrite := false) {
-		if (!destUri.isPathOnly)
-			throw ArgErr(_msg_urlMustBePathOnly("destUri", destUri, `etc/config.props`))
-		if (destUri.isPathAbs)
-			throw ArgErr(_msg_urlMustNotStartWithSlash("destUri", destUri, `etc/config.props`))
-		
-		if (srcFile == null || !srcFile.exists)
-			return null
-		
-		if (destUri.isDir && !srcFile.isDir)
-			destUri = destUri.plusName(srcFile.name)
-
-		dstFile := (_distDir + destUri).normalize
-		srcFile.copyTo(dstFile, ["overwrite": overwrite])
-		log("  - copied " + dstFile.uri.relTo(_distDir.uri).toFile.osPath)
-		return dstFile
+		_copyFile(srcFile, destUri, overwrite, Str.defVal)
 	}
 	
 	** Compresses the given file to a .zip file at the destination URL- which is relative to the output folder.
@@ -225,11 +225,11 @@ const class AppBuilder {
 
 	** Creates basic script files to launch the application.
 	Void createScriptFiles(Str baseFileName, Str scriptArgs) {
-		copyFile(file(`bin/fanlaunch`, false), `fanlaunch`)
-		bshScript 	:= "#!/bin/bash\n\n. \"\${0%/*}/fanlaunch\"\nfanlaunch Fan ${scriptArgs} \"\$@\""
+		copyFile(findFile(`bin/fanlaunch`, true), `fanlaunch`)
+		bshScript 	:= "#!/bin/bash\n\nexport FAN_HOME=.\nunset FAN_ENV\n. \"\${0%/*}/fanlaunch\"\nfanlaunch Fan ${scriptArgs} \"\$@\""
 		bshFile 	:= (_distDir + `${baseFileName}`).normalize.out.writeChars(bshScript).close
 		log("  - copied ${baseFileName}")
-		cmdScript	:= "@set FAN_HOME=.\n@java -cp \"%FAN_HOME%\\lib\\java\\sys.jar\" fanx.tools.Fan ${scriptArgs} %*"
+		cmdScript	:= "@set FAN_HOME=.\n@set FAN_ENV=\n@java -cp \"%FAN_HOME%\\lib\\java\\sys.jar\" fanx.tools.Fan ${scriptArgs} %*"
 		cmdFile 	:= (_distDir + `${baseFileName}.cmd`).normalize.out.writeChars(cmdScript).close
 		log("  - copied ${baseFileName}.cmd")
 	}
@@ -237,7 +237,17 @@ const class AppBuilder {
 	** Resolves a file based on the given relative URI. 
 	** If 'useEnv' is 'true' then 'Env.cur.findFile(...)' is used to find the file, otherwise it is 
 	** taken to be relative to 'fantomHomeDir'. 
-	File? file(Uri fileUri, Bool checked := true) {
+	File? findPodFile(Str podName, Bool checked := true) {
+		if (useEnv)
+			return Env.cur.findPodFile(podName) ?: (checked ? throw ArgErr("Could not find pod file for ${podName}") : null)
+		file := (fantomHomeDir + `lib/fan/${podName}.pod`).normalize
+		return file.exists ? file : (checked ? throw ArgErr("File not found - ${file}") : null)
+	}
+
+	** Resolves a pod file based on its name. 
+	** If 'useEnv' is 'true' then 'Env.cur.findFile(...)' is used to find the file, otherwise it is 
+	** taken to be relative to 'fantomHomeDir'. 
+	File? findFile(Uri fileUri, Bool checked := true) {
 		if (useEnv)
 			return Env.cur.findFile(fileUri, checked)
 		if (fileUri.isPathAbs)
@@ -249,6 +259,28 @@ const class AppBuilder {
 	** Echos the msg.
 	static Void log(Obj? msg := "") {
 		echo(msg?.toStr ?: "null")
+	}
+	
+	private File? _copyFile(File? srcFile, Uri destUri, Bool overwrite, Str append) {
+		if (!destUri.isPathOnly)
+			throw ArgErr(_msg_urlMustBePathOnly("destUri", destUri, `etc/config.props`))
+		if (destUri.isPathAbs)
+			throw ArgErr(_msg_urlMustNotStartWithSlash("destUri", destUri, `etc/config.props`))
+		
+		if (srcFile == null)
+			return null
+		if (!srcFile.exists) {
+			log("Src file does not exist: ${srcFile?.normalize?.osPath}")
+			return null
+		}
+		
+		if (destUri.isDir && !srcFile.isDir)
+			destUri = destUri.plusName(srcFile.name)
+
+		dstFile := (_distDir + destUri).normalize
+		srcFile.copyTo(dstFile, ["overwrite": overwrite])
+		log("  - copied " + dstFile.uri.relTo(_distDir.uri).toFile.osPath + append)
+		return dstFile
 	}
 	
 	private Str[] _findPodDependencies(Str[] podNames, Str podName) {
