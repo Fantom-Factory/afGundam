@@ -20,6 +20,8 @@ const class GundamMod : WebMod {
 			onIndex
 		else if (name == "pod")
 			onPodFile
+		else if (name == "favicon.ico")
+			onFile(name)
 		else
 			res.sendErr(404)
 	}
@@ -33,12 +35,15 @@ const class GundamMod : WebMod {
 		out.tag("html", "lang='en'").nl
 		out.head
 			out.title.w(windowTitle).titleEnd
-			out.tag("link", "href='/pod/afGundam/res/web/gundam.css' type='text/css' rel='stylesheet'")
 			out.tag("meta", "charset='utf-8'").nl
 			out.tag("meta", "http-equiv='X-UA-Compatible' content='IE=edge'").nl
+			out.tag("meta", "name='description' content='Gundam :: A Horizontally Scrolling Shoot'em'Up Game by Alien-Factory'").nl
+			out.tag("link", "href='/pod/afGundam/res/web/gundam.css' type='text/css' rel='stylesheet'").nl
+		
 			pods.each |pod| { 
 				out.includeJs(`/pod/${pod.name}/${pod.name}.js`)				
 			}
+
 			// see http://fantom.org/forum/topic/2548
 			out.script.w("fan.sys.TimeZone.m_cur = fan.sys.TimeZone.fromStr('UTC');").scriptEnd
 			WebUtil.jsMain(out, Gundam#.qname, env)
@@ -59,6 +64,14 @@ const class GundamMod : WebMod {
 				out.divEnd
 			out.divEnd
 
+			out.script.w("(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+			              ga('create', 'UA-33997125-8', 'auto');
+			              ga('send', 'pageview');")
+			out.scriptEnd
+
 		out.bodyEnd
 		out.htmlEnd
 	}
@@ -66,6 +79,13 @@ const class GundamMod : WebMod {
 	Void onPodFile() {
     	// serve up pod resources
     	File file := ("fan://" + req.uri[1..-1]).toUri.get
+    	if (!file.exists) { res.sendErr(404); return }
+    	FileWeblet(file).onService
+   	}
+
+	Void onFile(Str url) {
+    	// serve up pod resources
+    	File file := (`fan://pod/afGundam/res/${url}`).get
     	if (!file.exists) { res.sendErr(404); return }
     	FileWeblet(file).onService
    	}
