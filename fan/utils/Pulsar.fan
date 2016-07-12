@@ -1,9 +1,9 @@
+using fwt
 
 ** Calls listeners every XXXms. Use for animation and game loops.
 @Js @NoDoc
 class Pulsar {
 	private const static Log	log 			:= Log.get(Pulsar#.name)
-	private const PulsarLoop	pulsarLoop		:= PulsarLoop()
 	
 			Duration 			frequency		:= 200ms
 			PulsarState 		state			:= PulsarState.stopped	{ private set }
@@ -107,8 +107,8 @@ class Pulsar {
 	}
 	
 	private Void pulseIn(Duration when) {
-		log.debug("Pulsing in ${when.toLocale}")
-		pulsarLoop.pulseIn(when) |->| {
+		//log.debug("Pulsing in ${when.toLocale}")
+		Desktop.callLater(when) |->| {
 			pulseNow
 		}
 	}
@@ -119,10 +119,5 @@ enum class PulsarState {
 	stopped,
 	running,
 	stopping
-}
-
-@Js @NoDoc
-internal native const class PulsarLoop {
-	Void pulseIn(Duration ms, |->| func)
 }
 

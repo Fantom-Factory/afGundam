@@ -1,7 +1,8 @@
+using afConcurrent
 
 @Js @NoDoc
 const class Ioc {
-	private static const StaticData staticData := StaticData(Ioc#) 
+	private static const AtomicMap	staticData	:= AtomicMap()
 	
 	static GameWindow gameWindow() {
 		get(GameWindow#) |->Obj| {
@@ -58,13 +59,13 @@ const class Ioc {
 	}
 	
 	private static Obj? get(Type serviceType, |->Obj|? factory := null) {
-		staticData.getOrAdd(serviceType) {
-			(factory == null) ? serviceType.make :  factory()			
-		}
+		((Unsafe) staticData.getOrAdd(serviceType) {
+			Unsafe((factory == null) ? serviceType.make :  factory())			
+		}).val
 	}
 
 	private static Void set(Obj service, Type serviceType := service.typeof) {
-		staticData.set(serviceType, service)
+		staticData.set(serviceType, Unsafe(service))
 	}
 }
 

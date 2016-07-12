@@ -1,3 +1,4 @@
+using afConcurrent
 
 **
 ** This beats the 'Flux#loadOptions' cos this cache works from any Thread! And theirs is goosed with NPEs!
@@ -12,7 +13,7 @@
 const class Preferences {
 	private static const Log log := Log.get(Preferences#.name)
 	
-	private const StaticData prefsCache := StaticData(Preferences#)
+	private const AtomicMap	prefsCache	:= AtomicMap()
 	
 	private static const Preferences instance := Preferences()
 
@@ -42,7 +43,7 @@ const class Preferences {
 	
 	static Bool updated(Type prefsType) {
 		if (instance.prefsCache.containsKey(prefsType)) {
-			CachedPrefs cached := instance.prefsCache[prefsType]
+			CachedPrefs cached := ((Unsafe) instance.prefsCache[prefsType]).val
 			return cached.modified
 		}
 		return true
@@ -50,7 +51,7 @@ const class Preferences {
 	
 	private Obj loadPrefsInternal(Type prefsType, Str name := prefsType.name) {
 		if (prefsCache.containsKey(prefsType)) {
-			CachedPrefs cached := prefsCache[prefsType] 
+			CachedPrefs cached := ((Unsafe) prefsCache[prefsType]).val 
 			if (!cached.modified) {
 				log.debug("Returning cached $prefsType.name $cached.prefs")
 				return cached.prefs
@@ -74,7 +75,7 @@ const class Preferences {
 			value = prefsType.make				
 		}
 
-		prefsCache[prefsType] = CachedPrefs(file, value)
+		prefsCache[prefsType] = Unsafe(CachedPrefs(file, value))
 		
 		return value
 	}
