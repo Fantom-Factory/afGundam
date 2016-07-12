@@ -1,5 +1,11 @@
 Versions
 ********
+v2.1.0
+------
+ - Chg: Bigger, Bolder, Better (!) standalone webpage. Reminiscent of an arcade cabinet.
+ - Chg: Removed native Java ans JS code, added a dependency on [afConcurrent]`pod:afConcurrent`.
+ - Chg: Added a Keys screen.
+
 v2.0.6
 ------
  - New: Created standalone application '.zip' file.

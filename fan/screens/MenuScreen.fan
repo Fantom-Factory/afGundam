@@ -7,8 +7,9 @@ class MenuScreen : TitleScreen {
 		Ioc.sprites.add(GundamBig())
 		Ioc.sprites.add(GunSight())
 		
-		menuOptions.add("Start Game", 	"", 15, |->| {Ioc.gameWindow.showScreen(PreLoadImagesScreen(ImageType.game, GameScreen()))	} )
-		menuOptions.add("About", 		"", 16, |->| {Ioc.gameWindow.showScreen(AboutScreen())	} )
+		menuOptions.add("Start Game", 	"", 14, |->| {Ioc.gameWindow.showScreen(PreLoadImagesScreen(ImageType.game, GameScreen()))	} )
+		menuOptions.add("About", 		"", 15, |->| {Ioc.gameWindow.showScreen(AboutScreen())	} )
+		menuOptions.add("Keys", 		"", 16, |->| {Ioc.gameWindow.showScreen(KeysScreen())	} )
 		menuOptions.add("Options", 		"", 17, |->| {Ioc.gameWindow.showScreen(OptionsScreen())} )
 		menuOptions.add("Hi-Scores", 	"", 18, |->| {Ioc.gameWindow.showScreen(HiScoreScreen())} )
 		

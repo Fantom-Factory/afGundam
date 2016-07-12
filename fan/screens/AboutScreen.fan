@@ -15,17 +15,18 @@ class AboutScreen : TitleScreen {
 		Str under := "".padl(title.size, '-')
 		g.drawFont16Centred(title, 2*20)
 		g.drawFont16Centred(under, 3*20)
-		
-		g.drawFont16Centred("If it moves, shoot it. If it", 	 5*20)
-		g.drawFont16Centred("doesn't move, shoot it anyway!",	 6*20)
+		g.drawFont16Centred("A retro style shoot'em'up!",			 4*20)
 
-		g.drawFont16Centred("Use the cursor keys for control",	 8*20)
-		g.drawFont16Centred("and CTRL to fire.", 				 9*20)
+		g.drawFont16Centred("Originally written in Java in 2001",	 6*20)
+		g.drawFont16Centred("Gundam caught the attention of Sun",	 7*20)
+		g.drawFont16Centred("for being the worlds first full   ",	 8*20)
+		g.drawFont16Centred("screen Java game.                 ",	 9*20)
 
-		g.drawFont16Centred("Shoot Power-Ups for different", 	11*20)
-		g.drawFont16Centred("weapons.", 						12*20)
+		g.drawFont16Centred("Re-written in Fantom in 2013,     ",	11*20)
+		g.drawFont16Centred("Gundam now also runs in browsers  ",	12*20)
+		g.drawFont16Centred("as pure Javascript!               ",	13*20)
 
-		g.drawFont16Centred("For GUNDAM updates visit", 		14*20)
-		g.drawFont16Centred("http://www.alienfactory.co.uk/",	15*20)
+		g.drawFont16Centred("Have fun! - Steve Eynon",				17*20)
+		g.drawFont16Centred("www.alienfactory.co.uk",				18*20)
 	}	
 }

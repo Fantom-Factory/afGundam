@@ -87,7 +87,7 @@ class Pulsar {
 		if (shouldLogOverload(timeToNextPulse, now)) {
 			lastOverloadTime 		= now
 			lastOverloadDuration	= (timeToNextPulse - 1ms)	// don't log less than this - see tests
-			log.warn("Computer Overload! Freq down to ${timeToNextPulse.toMillis}ms")			
+			log.debug("Computer Overload! Freq down to ${timeToNextPulse.toMillis}ms")			
 		}
 	}
 	
