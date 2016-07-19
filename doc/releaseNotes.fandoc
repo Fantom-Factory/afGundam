@@ -1,5 +1,10 @@
 Versions
 ********
+v2.1.2
+------
+ - Chg: Added link to `http://fantom-lang.org/` from title screen.
+ - Bug: Caught some annoying JS err on startup.
+
 v2.1.0
 ------
  - Chg: Bigger, Bolder, Better (!) standalone webpage. Reminiscent of an arcade cabinet.

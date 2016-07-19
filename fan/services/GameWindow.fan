@@ -63,6 +63,7 @@ class GameWindow {
 		newScreen.startUp
 		
 		window.content = newScreen
-		window.relayout
+		try window.relayout
+		catch { /* catch some JS 'elem not found' err */ }
 	}
 }

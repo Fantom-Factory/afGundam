@@ -2,14 +2,26 @@
 class BuildGundam {
 	static Void main() {
 		AppBuilder("afGundam") {
-		it.jarFiles = ["swt.jar"]
+			it.jarFiles = ["swt.jar"]
 		}.build |bob| {
 			bob.copyFile(`fan://afGundam/licence.txt`.get, `./`)
-			bob.createScriptFiles("${bob.podName}-web", "${bob.podName} -ws")
+			bob.createScriptFiles("${bob.podName}-web", "${bob.podName} -ws")			
 		}
 	}
 }
 
+class BuildGundamWeb {
+	static Void main() {
+		AppBuilder("afGundam") {
+		}.build |bob| {
+			bob.createScriptFiles("${bob.podName}-web", "${bob.podName} -ws -port ")
+
+			bob.copyFile(`build.fan`.toFile,	`build.fan`,			true)
+			bob.copyFile(`heroku.props`.toFile,	`heroku.props`,			true)
+			bob.copyFile(`Procfile`.toFile,		`Procfile`,				true)
+		}
+	}
+}
 
 
 // ---- Do not edit below this line ---------------------------------------------------------------
