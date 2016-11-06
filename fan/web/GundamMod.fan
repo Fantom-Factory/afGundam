@@ -41,8 +41,8 @@ const class GundamMod : WebMod {
 			out.tag("meta", "name='description'        content=\"${windowDesc}\"").nl
 			out.tag("meta", "property='og:type'        content='website'").nl
 			out.tag("meta", "property='og:title'       content='${windowTitle}'").nl
-			out.tag("meta", "property='og:url'         content='${req.absUri}'").nl
-			out.tag("meta", "property='og:image'       content='${req.absUri.scheme}://${req.absUri.host}/pod/afGundam/doc/ogimage.png'").nl
+			out.tag("meta", "property='og:url'         content='http://gundam.fantomfactory.org/'").nl
+			out.tag("meta", "property='og:image'       content='http://gundam.fantomfactory.org/pod/afGundam/doc/ogimage.png'").nl
 			out.tag("meta", "property='og:description' content=\"${windowDesc}\"").nl
 			out.tag("link", "href='/pod/afGundam/res/web/gundam.css' type='text/css' rel='stylesheet'").nl
 		
